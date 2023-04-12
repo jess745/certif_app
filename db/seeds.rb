@@ -29,7 +29,8 @@ user4 = User.create!(
   password:"lewagon4"
 )
 #cars
-Car1 = Car.create!(
+
+car1 = Car.create!(
   brand:"Fiat",
   model:"500",
   year_of_production:2007,
@@ -37,7 +38,7 @@ Car1 = Car.create!(
   user:user1
 )
 
-Car2 = Car.create!(
+car2 = Car.create!(
   brand:"Renault",
   model:"Twingo",
   year_of_production:2003,
@@ -46,7 +47,7 @@ Car2 = Car.create!(
 
 )
 
-Car3 = Car.create!(
+car3 = Car.create!(
   brand:"Volkswagen",
   model:"Polo",
   year_of_production:2013,
@@ -54,7 +55,7 @@ Car3 = Car.create!(
   user:user3
 )
 
-Car4 = Car.create!(
+car4 = Car.create!(
   brand:"Audi",
   model:"S5",
   year_of_production:2020,
@@ -65,20 +66,32 @@ Car4 = Car.create!(
 #booking
 booking1 = Booking.create!(
   user: user1,
-  car: car1
+  car: car4,
+  starts_at: "Sat, 6 May 2023",
+  ends_at: "Sun, 7 May 2023",
+  accepted: true
 )
 
 booking2 = Booking.create!(
   user: user2,
-  car: car2
+  car: car1,
+  starts_at: "Mon, 8 May 2023",
+  ends_at: "Tue, 9 May 2023",
+  accepted: true
 )
 
 booking3 = Booking.create!(
   user: user3,
-  car: car3
+  car: car2,
+  starts_at: "Friday, 26 May 2023",
+  ends_at: "Tue, 30 May 2023",
+  accepted: true
 )
 
 booking4 = Booking.create!(
   user: user4,
-  car: car4
+  car: car3,
+  starts_at: "Friday, 2 June 2023",
+  ends_at: "Mon,  5 June 2023",
+  accepted: false
 )
