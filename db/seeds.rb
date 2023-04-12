@@ -33,7 +33,9 @@ user4 = User.create!(
 car1 = Car.create!(
   brand:"Fiat",
   model:"500",
+  images: "https://images.frandroid.com/wp-content/uploads/2020/12/fiat-500-electrique-23.jpg",
   year_of_production:2007,
+  address: "20 rue didot, 75020 Paris",
   price_per_day:60,
   user:user1
 )
@@ -41,7 +43,9 @@ car1 = Car.create!(
 car2 = Car.create!(
   brand:"Renault",
   model:"Twingo",
+  images: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Renault_Twingo_Dynamique_%28III%29_%E2%80%93_Frontansicht%2C_24._Oktober_2015%2C_M%C3%BCnster.jpg",
   year_of_production:2003,
+  address: "14 rue lafitte, 76620 Le Havre",
   price_per_day:40,
   user:user2
 
@@ -50,7 +54,9 @@ car2 = Car.create!(
 car3 = Car.create!(
   brand:"Volkswagen",
   model:"Polo",
+  images: "https://www.njuskalo.hr/image-w920x690/auti/vw-polo-1.4-tdi-slika-181585559.jpg",
   year_of_production:2013,
+  address: "22 rue de la tombe issoire, 75014 Paris",
   price_per_day:60,
   user:user3
 )
@@ -58,7 +64,9 @@ car3 = Car.create!(
 car4 = Car.create!(
   brand:"Audi",
   model:"S5",
+  images: "https://autoplay-1452c.kxcdn.com/?id=68133449&width=1000",
   year_of_production:2020,
+  address: "60 rue des cocos, 06400 cannes",
   price_per_day:80,
   user:user4
 )
