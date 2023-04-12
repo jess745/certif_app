@@ -1,9 +1,16 @@
 
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.caradisiac.com/logos/4/8/4/7/274847/S0-location-de-voitures-les-tarifs-n-en-finissent-pas-de-s-envoler-199832.jpg);">
+  <div class="container">
+    <h1> <strong>My Car Just for You!</strong></h1>
+    <p>Rent a car faster and easily between locals.</p>
+  </div>
+</div>
 
-<h1>Cars</h1>
-
+<div class="card-product ">
 <ul>
   <% @cars.each do |car| %>
-    <li><%= link_to car.brand, car_path(car)%></li>
+    <li style ="list-style:none"><%= link_to car.brand, car_path(car)%></li>
+    <li style ="list-style:none"><%= image_tag car.images %></li>
   <% end %>
 </ul>
+</div>

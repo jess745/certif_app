@@ -13,7 +13,7 @@ before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   def create
     @car = Car.new(car_params)
-    #@car.user = current_user
+    @car.user = current_user
     @car.save
     redirect_to my_cars_path
   end
@@ -31,9 +31,15 @@ before_action :set_car, only: [:show, :edit, :update, :destroy]
     redirect_to cars_path, status: :see_other
   end
 
+  def my_cars
+    @cars = Car.where(user: current_user)
+  end
+
   private
   def set_car
     @car = Car.find(params[:id])
+    if @car.nil?
+    end
   end
 
   def car_params

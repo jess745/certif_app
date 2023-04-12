@@ -11,6 +11,7 @@
     <p> <h3>Address:</h3><%= @car.address %></p>
     <p><h3>Price per day:</h3> <%= @car.price_per_day %></p>
 
+    <%= link_to "Book this car" %>
 
     <%= link_to "New", new_car_path(@car) %> |
     <%= link_to "Delete the car",car_path(@car),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>|

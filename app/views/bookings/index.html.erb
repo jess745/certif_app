@@ -1,0 +1,6 @@
+<h1>Booking</h1>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li style ="list-style:none"><%= booking.car.brand %></li>
+  <% end %>
+</ul>
