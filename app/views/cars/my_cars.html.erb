@@ -1,0 +1,10 @@
+<div class="margin-body"></div>
+      <% @car.each do |beach| %>
+
+        <div class="row mt-4">
+            <%= link_to car_path(car.id) do %>
+
+
+                <%= link_to car.brand, car_path(car.id) %>
+                  <%= beach.model %>
+                </div>

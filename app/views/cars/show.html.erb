@@ -6,6 +6,9 @@
     <h1 class="Car-show-title"><%=@car.brand %></h1>
     <p> <%= @car.brand %></p>
     <p> <%= @car.model %></p>
-  </div>
 
-  <div class="container-beach mt-5">
+
+    <%= link_to "New", new_car_path(@car) %> |
+    <%= link_to "Delete the car",car_path(@car),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>|
+    <%= link_to "Back", cars_path %>
+  </div>
