@@ -35,7 +35,6 @@ Car1 = Car.create!(
   year_of_production:2007,
   price_per_day:60,
   user:user1
-
 )
 
 Car2 = Car.create!(
@@ -53,7 +52,6 @@ Car3 = Car.create!(
   year_of_production:2013,
   price_per_day:60,
   user:user3
-
 )
 
 Car4 = Car.create!(
@@ -62,5 +60,25 @@ Car4 = Car.create!(
   year_of_production:2020,
   price_per_day:80,
   user:user4
+)
 
+#booking
+booking1 = Booking.create!(
+  user: user1,
+  car: car1
+)
+
+booking2 = Booking.create!(
+  user: user2,
+  car: car2
+)
+
+booking3 = Booking.create!(
+  user: user3,
+  car: car3
+)
+
+booking4 = Booking.create!(
+  user: user4,
+  car: car4
 )
