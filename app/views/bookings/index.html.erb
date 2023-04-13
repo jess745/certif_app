@@ -1,10 +1,20 @@
 <div class="container">
   <h1><strong>My Bookings</strong></h1>
-  <ul class="booking-list">
+  <div class="row card-deck">
     <% @bookings.each do |booking| %>
-      <li><%= booking.car.brand %></li>
-      <li><%= booking.car.model %></li>
-      <li><%= image_tag booking.car.images, class: "booking-img" %></li>
+      <div class="col-sm-3">
+        <div class="card">
+          <%= image_tag booking.car.images, class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= booking.car.brand %></h5>
+            <p class="card-text"><%= booking.car.model %></p>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </ul>
+  </div>
+</div>
+
+<div class="container">
+  <%= link_to "Back to Cars", cars_path, class: "btn btn-outline-primary mt-3" %>
 </div>

@@ -2,9 +2,13 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cars = Car.all
+    if params[:search]
+      @cars = Car.where("brand LIKE ?", "%#{params[:search]}%")
+    else
+      @cars = Car.all
+    end
   end
-
+  
   def show
   end
 
@@ -56,4 +60,3 @@ class CarsController < ApplicationController
     params.require(:car).permit(:brand, :model, :address, :year_of_production, :price_per_day)
   end
 end
-

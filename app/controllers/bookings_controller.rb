@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
+      flash[:notice] = "Your booking has been successfully created!"
       redirect_to car_bookings_path
     else
       render :new, status: :unprocessable_entity
