@@ -3,7 +3,7 @@ class CreateBookings < ActiveRecord::Migration[7.0]
     create_table :bookings do |t|
       t.references :user, null: false, foreign_key: true
       t.references :car, null: false, foreign_key: true
-      t.date :starts_at
+      t.date :start_at
       t.date :ends_at
       t.boolean :accepted
 

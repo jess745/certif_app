@@ -1,0 +1,31 @@
+
+<div class="container">
+<h1>New Booking</h1>
+
+<%= form_with(model: [@car, @booking], local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :start_date %>
+    <%= form.text_field :start_date, class: 'form-control flatpickr', data: { controller: 'flatpickr' } %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :ends_date %>
+    <%= form.text_field :ends_date, class: 'form-control flatpickr', data: { controller: 'flatpickr' } %>
+  </div>
+
+  <%= form.submit "Book this car", class: "btn btn-primary" %>
+<% end %>
+</div>
+
+<script>
+  import Flatpickr from "flatpickr";
+
+  document.addEventListener('turbo:load', () => {
+    Flatpickr('.flatpickr', {
+      enableTime: true,
+      dateFormat: "Y-m-d H:i",
+      minDate: "today",
+      time_24hr: true,
+    });
+  });
+</script>

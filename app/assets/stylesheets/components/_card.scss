@@ -1,11 +1,29 @@
 .card-product{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid: gap 16px;
-  }
+    display: flex;
+    flex-direction: row;
+    height: 200%;
+    width: 220px;
+    object-fit: cover;
+    border-radius: 30px;
+}
 
   .card-product img {
     height: 200%;
     width: 220px;
     object-fit: cover;
+    border: radius 30px;
+  }
+
+  .card .card-body {
+    flex: 1;
+  }
+
+  .card-img-top {
+    height: 200%;
+    width: 220px;
+    object-fit: cover;
+  }
+
+  .card-container {
+    padding-top: 30px;
   }

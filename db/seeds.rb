@@ -28,6 +28,22 @@ user4 = User.create!(
   email:"sam@lewagon.fr",
   password:"lewagon4"
 )
+
+
+user5= User.create!(
+  email:"simon@lewagon.fr",
+  password:"lewagon5"
+)
+
+user6= User.create!(
+  email:"lola@lewagon.fr",
+  password:"lewagon6"
+)
+
+user7= User.create!(
+  email:"marc@lewagon.fr",
+  password:"lewagon7"
+)
 #cars
 
 car1 = Car.create!(
@@ -69,6 +85,26 @@ car4 = Car.create!(
   address: "60 rue des cocos, 06400 cannes",
   price_per_day:80,
   user:user4
+)
+
+car5 = Car.create!(
+  brand:"Porsche",
+  model:"Cayenne",
+  images: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Porsche_Cayenne_front_20080312.jpg",
+  year_of_production:2020,
+  address: "60 rue des marmottes, 13000 Marseille",
+  price_per_day:90,
+  user:user5
+)
+
+car6 = Car.create!(
+  brand:"Mini Cooper",
+  model:"Sport",
+  images: "https://www.larevueautomobile.com/images/fiche-technique/2022/Mini/Mini/Cooper-S/Mini_Mini_Cooper_S_MD_1.jpg",
+  year_of_production:2023,
+  address: "60 rue de l'Eure, 13000 Marseille",
+  price_per_day:90,
+  user:user6
 )
 
 #booking

@@ -1,19 +1,26 @@
-<div class="container mt-5">
-
-  <div class="margin-body"></div>
-
-  <div class="title-Car mt-5">
-    <h1 class="Car-show-title"><%=@car.brand %></h1>
-    <p><h3>Brand:</h3> <%= @car.brand %></p>
-    <p><h3>Model:</h3><%= @car.model %></p>
-    <p> <%= image_tag @car.images, class:"img-show" %></p>
-    <p><h3>Year of production:</h3> <%= @car.year_of_production %></p>
-    <p> <h3>Address:</h3><%= @car.address %></p>
-    <p><h3>Price per day:</h3> <%= @car.price_per_day %></p>
-
-    <%= link_to "Book this car" %>
-
-    <%= link_to "New", new_car_path(@car) %> |
-    <%= link_to "Delete the car",car_path(@car),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>|
-    <%= link_to "Back", cars_path %>
+<div class="container mt-5" >
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <%= image_tag @car.images, class: "card-img-top img-show" %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= @car.brand %> <%= @car.model %></h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Brand:</strong> <%= @car.brand %></li>
+            <li class="list-group-item"><strong>Model:</strong> <%= @car.model %></li>
+            <li class="list-group-item"><strong>Year of production:</strong> <%= @car.year_of_production %></li>
+            <li class="list-group-item"><strong>Address:</strong> <%= @car.address %></li>
+            <li class="list-group-item"><strong>Price per day:</strong> <%= number_to_currency(@car.price_per_day) %></li>
+          </ul>
+          <%= link_to "Book this car", new_car_booking_path(@car), class: "btn btn-primary mt-3" %>
+          <%= link_to "New", new_car_path(@car), class: "btn btn-secondary mt-3" %>
+          <%= link_to "Back", cars_path, class: "btn btn-outline-primary mt-3" %>
+        </div>
+      </div>
+    </div>
   </div>
+</div>

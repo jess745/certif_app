@@ -1,16 +1,42 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.caradisiac.com/logos/4/8/4/7/274847/S0-location-de-voitures-les-tarifs-n-en-finissent-pas-de-s-envoler-199832.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.shutterstock.com/image-photo/woman-handing-another-person-automobile-260nw-1406379395.jpg);">
   <div class="container">
     <h1> <strong>My Car Just for You!</strong></h1>
     <p>Rent a car faster and easily between locals.</p>
   </div>
 </div>
 
-<div class="card-product ">
-<ul>
-  <% @cars.each do |car| %>
-    <li style ="list-style:none"><%= link_to car.brand, car_path(car)%></li>
-    <li style ="list-style:none"><%= image_tag car.images %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <%= form_tag cars_path, method: :get do %>
+        <div class="input-group">
+          <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search for a car" %>
+          <div class="input-group-append">
+            <%= button_tag type: :submit, class: "btn btn-primary" do %>
+              Search
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <% @cars.each do |car| %>
+      <div class="col-sm-3">
+        <div class="card">
+          <%= image_tag car.images, class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= car.brand %></h5>
+            <%= link_to car_path(car) do %>
+              <button type="button" class="btn btn-primary">
+                Go to Car
+              </button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
